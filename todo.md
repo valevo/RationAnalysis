@@ -1,6 +1,6 @@
-*****************************
+# To do
+
 * A. Theoretische Grundlagen
-*****************************
 
 1. Rational Speech Act Model verstehen -> Eigenschaften, Probleme (V, Z)
 
