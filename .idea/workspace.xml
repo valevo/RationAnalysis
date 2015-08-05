@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0078cb48-2755-44b0-b67e-4f9221f7a325" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hellinger.py" afterPath="$PROJECT_DIR$/Hellinger.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RSA_Model.py" afterPath="$PROJECT_DIR$/RSA_Model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="0078cb48-2755-44b0-b67e-4f9221f7a325" name="Default" comment="" />
     <ignored path="RationAnalysis.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,8 +81,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/hellinger.py" />
-        <option value="$PROJECT_DIR$/RSA_Model.py" />
         <option value="$PROJECT_DIR$/Hellinger.py" />
+        <option value="$PROJECT_DIR$/RSA_Model.py" />
       </list>
     </option>
   </component>
