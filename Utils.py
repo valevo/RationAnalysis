@@ -50,7 +50,6 @@ def get_matrix(mat):
 def get_ratio_matrix(mat):
     matrix, total_nums = get_matrix(mat)
     ratios = [1./cur_total.item() for cur_total in total_nums]
-    print('ratios', ratios)
     ratios = np.diag(ratios)
     return ratios*matrix
 
