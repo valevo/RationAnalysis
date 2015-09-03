@@ -14,7 +14,7 @@ from Fit_Model import *
 
 
 from JSD import jsd_non_iterative
-from Hellinger import hellinger_non_iterative
+from Hellinger import hellinger_non_iterative_probs
 
 if __name__ == '__main__':
 
@@ -135,7 +135,7 @@ if __name__ == '__main__':
 
     ################### UTILITY FUNCTION = Hellinger ########################
 
-    s_prob_func, l_prob_func = prob_funcs_given_lambda(simple_game, simple_salience, (trigger_prod, trigger_comp), util_func=hellinger_non_iterative)
+    s_prob_func, l_prob_func = prob_funcs_given_lambda(simple_game, simple_salience, (trigger_prod, trigger_comp), util_func=hellinger_non_iterative_probs)
 
     s_likelihood_func = likelhoods_given_lambda(simple_prod_trials, simple_prod_successes, s_prob_func)
 
