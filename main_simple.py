@@ -11,8 +11,6 @@ from Fit_Model import *
 
 # from Utils import *
 
-
-
 from JSD import jsd_non_iterative
 from Hellinger import hellinger_non_iterative_probs
 
