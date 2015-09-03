@@ -39,7 +39,8 @@ def hellinger_non_iterative_nums(num_messages):
 # 1/uniform distribution
 def hellinger_non_iterative_probs(prob_messages):
     print("hellinger_non_iterative_probs(", prob_messages, "): ", (1 / 2**.5) * ((prob_messages-1)**2 + (((1/prob_messages)-1) * prob_messages**2))**.5)
-    return (1 / 2**.5) * ((prob_messages-1)**2 + (((1/prob_messages)-1) * prob_messages**2))**.5
+    rval = (1 / 2**.5) * ((prob_messages-1)**2 + (((1/prob_messages)-1) * prob_messages**2))**.5
+    return -rval
 
 
 if __name__ == '__main__':

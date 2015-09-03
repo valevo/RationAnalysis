@@ -153,7 +153,7 @@ if __name__ == '__main__':
 
     #### PLOTS ####
 
-    ls = [_ for _ in np.arange(0, 20, 0.01)]
+    ls = [_ for _ in np.arange(-20, 20, 0.01)]
 
     s_vals = [s_likelihood_func(l) for l in ls]
 
