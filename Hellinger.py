@@ -25,7 +25,7 @@ def euclidean(dist_a, dist_b):
 def hellinger_non_iterative_nums(num_messages):
     # dist_a = Pl(X=x) = {1/n, ...}, with len(dist_a) = n
     # dist_b = Ps(X=x) = {1, 0, 0, ...}
-    print("hellinger_non_iterative_nums(", num_messages, "): ", (1 / 2**.5) * (((1/num_messages)-1)**2 + ((num_messages-1)*(1/num_messages)**2))**.5)
+    #print("hellinger_non_iterative_nums(", num_messages, "): ", (1 / 2**.5) * (((1/num_messages)-1)**2 + ((num_messages-1)*(1/num_messages)**2))**.5)
     return (1 / 2**.5) * (((1/num_messages)-1)**2 + ((num_messages-1)*(1/num_messages)**2))**.5
 
 
@@ -38,9 +38,14 @@ def hellinger_non_iterative_nums(num_messages):
 # -> sum(row of correspondence matrix) or
 # 1/uniform distribution
 def hellinger_non_iterative_probs(prob_messages):
+<<<<<<< Updated upstream
     print("hellinger_non_iterative_probs(", prob_messages, "): ", (1 / 2**.5) * ((prob_messages-1)**2 + (((1/prob_messages)-1) * prob_messages**2))**.5)
     rval = (1 / 2**.5) * ((prob_messages-1)**2 + (((1/prob_messages)-1) * prob_messages**2))**.5
     return -rval
+=======
+   # print("hellinger_non_iterative_probs(", prob_messages, "): ", (1 / 2**.5) * ((prob_messages-1)**2 + (((1/prob_messages)-1) * prob_messages**2))**.5)
+    return (1 / 2**.5) * ((prob_messages-1)**2 + (((1/prob_messages)-1) * prob_messages**2))**.5
+>>>>>>> Stashed changes
 
 
 if __name__ == '__main__':
