@@ -12,6 +12,7 @@ from Fit_Model import *
 
 
 from JSD import jsd_non_iterative
+from Hellinger import hellinger_non_iterative
 
 if __name__ == '__main__':
 
@@ -141,7 +142,50 @@ if __name__ == '__main__':
 
     ######################
     
-    
+    ################### UTILITY FUNCTION = Hellinger ########################
+
+    s_prob_func, l_prob_func = prob_funcs_given_lambda(complex_game, complex_salience, (trigger_prod, trigger_comp), util_func=hellinger_non_iterative)
+
+    s_likelihood_func = likelhoods_given_lambda(complex_prod_trials, complex_prod_successes, s_prob_func)
+
+    l_likelihood_func = likelhoods_given_lambda(complex_comp_trials, complex_comp_successes, l_prob_func)
+
+    combined_neg_func = neg_func(multiply_funcs(s_likelihood_func, l_likelihood_func))
+
+
+    s_min_result = minimize(neg_func(s_likelihood_func), 0., method='Nelder-Mead')
+
+    l_min_result = minimize(neg_func(l_likelihood_func), 0., method='Nelder-Mead')
+
+    print("Speaker result:\n", s_min_result, "\n")
+
+    print("Listener result:\n", l_min_result, "\n")
+
+
+    #### PLOTS ####
+
+    ls = [_ for _ in np.arange(0, 20, 0.01)]
+
+    s_vals = [s_likelihood_func(l) for l in ls]
+
+    l_vals = [l_likelihood_func(l) for l in ls]
+
+    combined_vals = [combined_neg_func(l) for l in ls]
+
+    # plt.subplot(111)
+
+    plt.plot(ls, s_vals, label='S1')
+
+    plt.plot(ls, l_vals, label='R2')
+
+    plt.plot(ls, combined_vals, label='COMB')
+
+    plt.legend()
+
+    plt.show()
+
+    ######################
+
     
     
 

@@ -167,10 +167,16 @@ if __name__ == '__main__':
 
     print('L_REASON:\n', rsa1.listener_reason, '\nEND')
 
-    ### Hellinger ###
-    # (doesn't work yet)
 
-    # s_choice = rsa1.s1(hellinger)
-    #
-    # print('S_CHOICE:\n', rsa1.speaker_choice, '\nEND')
+    ### Hellinger ###
+
+    # get the speaker's choice probabilities
+    # (using the Hellinger divergence as the utility function)
+    s_choice = rsa1.s1(hellinger)
+
+    print('S_CHOICE:\n', rsa1.speaker_choice, '\nEND')
+
+    l_reason = rsa1.r2([.3, .12, .58])
+
+    print('L_REASON:\n', rsa1.listener_reason, '\nEND')
 
