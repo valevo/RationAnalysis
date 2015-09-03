@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0078cb48-2755-44b0-b67e-4f9221f7a325" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hellinger.py" afterPath="$PROJECT_DIR$/Hellinger.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_simple.py" afterPath="$PROJECT_DIR$/main_simple.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RationAnalysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main_simple.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main_simple.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_simple.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.24175824">
               <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
               <folding />
             </state>
@@ -84,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Hellinger.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Hellinger.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hellinger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.030150754">
-              <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -114,8 +112,8 @@
         <option value="$PROJECT_DIR$/main_complex.py" />
         <option value="$PROJECT_DIR$/RSA.py" />
         <option value="$PROJECT_DIR$/JSD.py" />
-        <option value="$PROJECT_DIR$/Hellinger.py" />
         <option value="$PROJECT_DIR$/main_simple.py" />
+        <option value="$PROJECT_DIR$/Hellinger.py" />
       </list>
     </option>
   </component>
@@ -180,7 +178,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
   </component>
-  <component name="RunManager" selected="Python.Hellinger">
+  <component name="RunManager" selected="Python.main_simple">
     <configuration default="false" name="main_simple" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -361,8 +359,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.Hellinger" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main_simple" />
+        <item index="0" class="java.lang.String" itemvalue="Python.main_simple" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Hellinger" />
         <item index="2" class="java.lang.String" itemvalue="Python.JSD" />
       </list>
     </recent_temporary>
@@ -400,7 +398,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2672919" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22039859" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14722222" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -583,18 +581,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_simple.py">
+    <entry file="file://$PROJECT_DIR$/Hellinger.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hellinger.py">
+    <entry file="file://$PROJECT_DIR$/main_simple.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.030150754">
-          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.24175824">
+          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
           <folding />
         </state>
       </provider>
