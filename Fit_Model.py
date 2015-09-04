@@ -110,11 +110,9 @@ def prob_funcs_given_lambda(semantics_mat, saliences, triggers, util_func=log):
     # careful about the trigger
     listener_prob_func = prob_from_mat_func(listener_func, triggers[1])
 
-    print(speaker_func(1))
+    print("S1 (l=1):\n", speaker_func(1))
 
-    print(speaker_func(2))
-
-    print(listener_func(1))
+    print("R2 (l=1):\n", listener_func(1))
 
     return speaker_prob_func, listener_prob_func
 
@@ -124,31 +122,42 @@ if __name__ == '__main__':
     # plots how the probabilities (given to the binomial distribution for fitting)
     # behave for different values of lambda
 
-    simple_game = np.matrix("""
-                    [0 1 0 0;
-                    1 1 0 0;
-                    0 0 1 1]""")
+    # simple_game = np.matrix("""
+    #                 [0 1 0 0;
+    #                 1 1 0 0;
+    #                 0 0 1 1]""")
+    #
+    # simple_game = np.transpose(simple_game)
+    #
+    # exp1_prod_trials = 250
+    #
+    # exp1_prod_successes = 175
+    #
+    #
+    # s_prob_func, l_prob_func = prob_funcs_given_lambda(simple_game, [0.301, 0.259, 0.440], ((1, 0), (1, 0)))
+    #
+    # ls = [_ for _ in np.arange(-10, 10, 0.01)]
+    #
+    # s_probs = [s_prob_func(l) for l in ls]
+    #
+    # import matplotlib.pyplot as plt
+    #
+    # plt.plot(ls, s_probs)
+    #
+    # plt.show()
 
-    simple_game = np.transpose(simple_game)
-
-    exp1_prod_trials = 250
-
-    exp1_prod_successes = 175
-
-
-    s_prob_func, l_prob_func = prob_funcs_given_lambda(simple_game, [0.301, 0.259, 0.440], ((1, 0), (1, 0)))
-
-    ls = [_ for _ in np.arange(-10, 10, 0.01)]
-
-    s_probs = [s_prob_func(l) for l in ls]
 
     import matplotlib.pyplot as plt
 
-    plt.plot(ls, s_probs)
+    b = binomial(10, 0.7)
+
+    vals = [_ for _ in range(5, 11)]
+
+    l_hoods = [b(x) for x in vals]
+
+    plt.plot(vals, l_hoods)
 
     plt.show()
-
-
 
 
 
