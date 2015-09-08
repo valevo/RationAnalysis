@@ -57,7 +57,7 @@ def rsa_given_lambda(semantics_mat, saliences, util_func=log):
 
     rsa_obj.r0()
 
-    print("R0:\n", rsa_obj.listener_belief, "\nEND")
+    # print("R0:\n", rsa_obj.listener_belief, "\nEND")
 
     def func_over_lambda(lamb):
         rsa_obj.l = lamb
@@ -89,7 +89,6 @@ def listener_reason_given_lambda(rsa_func):
 # is taken as the probability of a success in a binomial distribution)
 # returns a function over the probability
 def prob_from_mat_func(mat_func, trigger):
-    print(mat_func, trigger)
     return lambda l: mat_func(l)[trigger[0], trigger[1]].item()
 
 
@@ -110,9 +109,9 @@ def prob_funcs_given_lambda(semantics_mat, saliences, triggers, util_func=log):
     # careful about the trigger
     listener_prob_func = prob_from_mat_func(listener_func, triggers[1])
 
-    print("S1 (l=1):\n", speaker_func(1))
-
-    print("R2 (l=1):\n", listener_func(1))
+    # print("S1 (l=1):\n", speaker_func(1))
+    #
+    # print("R2 (l=1):\n", listener_func(1))
 
     return speaker_prob_func, listener_prob_func
 

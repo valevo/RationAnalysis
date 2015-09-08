@@ -81,9 +81,14 @@ if __name__ == '__main__':
     # and that they are both concave functions and monotonically
     # increasing functions (all of that holds only for 0 < x < 1)
 
+
+
     import matplotlib.pyplot as plt
 
-    num_m = [x for x in range(1, 10000)]
+    from Hellinger import hellinger_non_iterative_probs
+
+
+    num_r = [x for x in range(1, 10000)]
 
     import numpy as np
 
@@ -99,38 +104,43 @@ if __name__ == '__main__':
 
     plt.plot(vals, kld_vals, label='KLD')
 
-    from Hellinger import hellinger_non_iterative_probs
-
     hl_vals = [hellinger_non_iterative_probs(x) for x in vals]
 
     plt.plot(vals, hl_vals, label='H')
 
+
+    points = [1./x for x in range(1, 10)]
+
+    for p in points:
+
+        plt.plot(p, log(p), 'o', color='k')
+        plt.plot(p, jsd_non_iterative(p), 'o', color='k')
+        plt.plot(p, hellinger_non_iterative_probs(p), 'o', color='k')
+
+    plt.plot(0, 0, color='k', label='Uniform distributions')
+
+    plt.title('Plots of $D_{KL}$, $D_{JS}$, $H$\nin the range of probabilities')
+
+    plt.xlabel('$p$')
+
+    plt.ylabel('$f(p)$')
+
     plt.legend()
 
     plt.show()
 
-    plt.plot(vals, [jsd_non_iterative(x)/log(x) for x in vals], label='RATIO JSD/KLD')
+    plt.plot(vals, [jsd_non_iterative(x)/log(x) for x in vals], label='JSD/KLD')
 
-    plt.plot(vals, [hellinger_non_iterative_probs(x)/log(x) for x in vals], label='RATIO H/KLD')
+    plt.plot(vals, [hellinger_non_iterative_probs(x)/log(x) for x in vals], label='H/KLD')
 
-    plt.plot(vals, [jsd_non_iterative(x)/hellinger_non_iterative_probs(x) for x in vals], label='RATIO JSD/H')
+    plt.plot(vals, [jsd_non_iterative(x)/hellinger_non_iterative_probs(x) for x in vals], label='JSD/H')
+
+    plt.title('Ratios of $D_{KL}$, $D_{JS}$, $H$')
+
+    plt.xlabel('$x$')
+
+    plt.ylabel('$\\frac{f(x)}{g(x)}$')
 
     plt.legend()
 
     plt.show()
-
-
-
-    # v1 = [_ for _ in range(2, 30)]
-    #
-    # jsd_vals = [jsd_non_iterative(x) for x in v1]
-    #
-    # plt.plot(v1, jsd_vals)
-    #
-    # v2 = [1./x for x in v1]
-    #
-    # kld_vals = [log(x) for x in v2]
-
-    # plt.plot(v2, kld_vals)
-    #
-    # plt.show()

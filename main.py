@@ -21,6 +21,8 @@ from main_simple import get_simple_likelihood_funcs
 
 if __name__ == '__main__':
 
+    ls = [_ for _ in np.arange(0, 20, 0.01)]
+
     ###################### KLD ###########################
 
     complex_s_likelihood_func, complex_l_likelihood_func = get_complex_likelihood_funcs(log)
@@ -31,7 +33,7 @@ if __name__ == '__main__':
 
     combined_func = multiply_funcs(complex_s_likelihood_func, simple_s_likelihood_func)
 
-    ls = [_ for _ in np.arange(0, 10, 0.01)]
+
 
     simple_vals = [simple_s_likelihood_func(l) for l in ls]
 
@@ -39,11 +41,17 @@ if __name__ == '__main__':
 
     combined_vals = [combined_func(l) for l in ls]
 
-    plt.plot(ls, simple_vals, label='Speaker')
+    plt.plot(ls, simple_vals, label='Simple')
 
-    plt.plot(ls, complex_vals, label='Listener')
+    plt.plot(ls, complex_vals, label='Complex')
 
     plt.plot(ls, combined_vals, label='Combined')
+
+    plt.title('Speaker Likelihood functions\n $U_S = -D_{KL}$')
+
+    plt.ylabel('$P(Data|\lambda)$')
+
+    plt.xlabel('$\lambda$')
 
     plt.legend()
 
@@ -53,19 +61,23 @@ if __name__ == '__main__':
 
     combined_func = multiply_funcs(complex_l_likelihood_func, simple_l_likelihood_func)
 
-    ls = [_ for _ in np.arange(0, 10, 0.01)]
-
     simple_vals = [simple_l_likelihood_func(l) for l in ls]
 
     complex_vals = [complex_l_likelihood_func(l) for l in ls]
 
     combined_vals = [combined_func(l) for l in ls]
 
-    plt.plot(ls, simple_vals, label='Speaker')
+    plt.plot(ls, simple_vals, label='Simple')
 
-    plt.plot(ls, complex_vals, label='Listener')
+    plt.plot(ls, complex_vals, label='Complex')
 
     plt.plot(ls, combined_vals, label='Combined')
+
+    plt.title('Listener Likelihood functions\n $U_S = -D_{KL}$')
+
+    plt.ylabel('$P(Data|\lambda)$')
+
+    plt.xlabel('$\lambda$')
 
     plt.legend()
 
@@ -82,7 +94,6 @@ if __name__ == '__main__':
 
     combined_func = multiply_funcs(complex_s_likelihood_func, simple_s_likelihood_func)
 
-    ls = [_ for _ in np.arange(0, 10, 0.01)]
 
     simple_vals = [simple_s_likelihood_func(l) for l in ls]
 
@@ -90,11 +101,17 @@ if __name__ == '__main__':
 
     combined_vals = [combined_func(l) for l in ls]
 
-    plt.plot(ls, simple_vals, label='Speaker')
+    plt.plot(ls, simple_vals, label='Simple')
 
-    plt.plot(ls, complex_vals, label='Listener')
+    plt.plot(ls, complex_vals, label='Complex')
 
     plt.plot(ls, combined_vals, label='Combined')
+
+    plt.title('Speaker Likelihood functions\n $U_S = -D_{JS}$')
+
+    plt.ylabel('$P(Data|\lambda)$')
+
+    plt.xlabel('$\lambda$')
 
     plt.legend()
 
@@ -104,7 +121,6 @@ if __name__ == '__main__':
 
     combined_func = multiply_funcs(complex_l_likelihood_func, simple_l_likelihood_func)
 
-    ls = [_ for _ in np.arange(0, 10, 0.01)]
 
     simple_vals = [simple_l_likelihood_func(l) for l in ls]
 
@@ -112,11 +128,17 @@ if __name__ == '__main__':
 
     combined_vals = [combined_func(l) for l in ls]
 
-    plt.plot(ls, simple_vals, label='Speaker')
+    plt.plot(ls, simple_vals, label='Simple')
 
-    plt.plot(ls, complex_vals, label='Listener')
+    plt.plot(ls, complex_vals, label='Complex')
 
     plt.plot(ls, combined_vals, label='Combined')
+
+    plt.title('Listener Likelihood functions\n $U_S = -D_{JS}$')
+
+    plt.ylabel('$P(Data|\lambda)$')
+
+    plt.xlabel('$\lambda$')
 
     plt.legend()
 
@@ -133,7 +155,6 @@ if __name__ == '__main__':
 
     combined_func = multiply_funcs(complex_s_likelihood_func, simple_s_likelihood_func)
 
-    ls = [_ for _ in np.arange(0, 10, 0.01)]
 
     simple_vals = [simple_s_likelihood_func(l) for l in ls]
 
@@ -141,11 +162,17 @@ if __name__ == '__main__':
 
     combined_vals = [combined_func(l) for l in ls]
 
-    plt.plot(ls, simple_vals, label='Speaker')
+    plt.plot(ls, simple_vals, label='Simple')
 
-    plt.plot(ls, complex_vals, label='Listener')
+    plt.plot(ls, complex_vals, label='Complex')
 
     plt.plot(ls, combined_vals, label='Combined')
+
+    plt.title('Speaker Likelihood functions\n $U_S = -H$')
+
+    plt.ylabel('$P(Data|\lambda)$')
+
+    plt.xlabel('$\lambda$')
 
     plt.legend()
 
@@ -155,7 +182,6 @@ if __name__ == '__main__':
 
     combined_func = multiply_funcs(complex_l_likelihood_func, simple_l_likelihood_func)
 
-    ls = [_ for _ in np.arange(0, 10, 0.01)]
 
     simple_vals = [simple_l_likelihood_func(l) for l in ls]
 
@@ -163,11 +189,17 @@ if __name__ == '__main__':
 
     combined_vals = [combined_func(l) for l in ls]
 
-    plt.plot(ls, simple_vals, label='Speaker')
+    plt.plot(ls, simple_vals, label='Simple')
 
-    plt.plot(ls, complex_vals, label='Listener')
+    plt.plot(ls, complex_vals, label='Complex')
 
     plt.plot(ls, combined_vals, label='Combined')
+
+    plt.title('Listener Likelihood functions\n $U_S = -H$')
+
+    plt.ylabel('$P(Data|\lambda)$')
+
+    plt.xlabel('$\lambda$')
 
     plt.legend()
 
