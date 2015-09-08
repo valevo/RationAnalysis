@@ -34,6 +34,11 @@ if __name__ == '__main__':
     combined_func = multiply_funcs(complex_s_likelihood_func, simple_s_likelihood_func)
 
 
+    s_min_result = minimize(neg_func(combined_func), 0., method='Nelder-Mead')
+
+    print(s_min_result, '\n')
+
+
 
     simple_vals = [simple_s_likelihood_func(l) for l in ls]
 
@@ -60,6 +65,10 @@ if __name__ == '__main__':
     #################### LISTENER #######################
 
     combined_func = multiply_funcs(complex_l_likelihood_func, simple_l_likelihood_func)
+
+    l_min_result = minimize(neg_func(combined_func), 0., method='Nelder-Mead')
+
+    print(l_min_result, '\n')
 
     simple_vals = [simple_l_likelihood_func(l) for l in ls]
 
@@ -94,6 +103,10 @@ if __name__ == '__main__':
 
     combined_func = multiply_funcs(complex_s_likelihood_func, simple_s_likelihood_func)
 
+    s_min_result = minimize(neg_func(combined_func), 0., method='Nelder-Mead')
+
+    print(s_min_result, '\n')
+
 
     simple_vals = [simple_s_likelihood_func(l) for l in ls]
 
@@ -120,6 +133,11 @@ if __name__ == '__main__':
     #################### LISTENER #######################
 
     combined_func = multiply_funcs(complex_l_likelihood_func, simple_l_likelihood_func)
+
+
+    l_min_result = minimize(neg_func(combined_func), 0., method='Nelder-Mead')
+
+    print(l_min_result, '\n')
 
 
     simple_vals = [simple_l_likelihood_func(l) for l in ls]
@@ -156,6 +174,11 @@ if __name__ == '__main__':
     combined_func = multiply_funcs(complex_s_likelihood_func, simple_s_likelihood_func)
 
 
+    s_min_result = minimize(neg_func(combined_func), 0., method='Nelder-Mead')
+
+    print(s_min_result, '\n')
+
+
     simple_vals = [simple_s_likelihood_func(l) for l in ls]
 
     complex_vals = [complex_s_likelihood_func(l) for l in ls]
@@ -181,6 +204,11 @@ if __name__ == '__main__':
     #################### LISTENER #######################
 
     combined_func = multiply_funcs(complex_l_likelihood_func, simple_l_likelihood_func)
+
+
+    l_min_result = minimize(neg_func(combined_func), 0., method='Nelder-Mead')
+
+    print(l_min_result, '\n')
 
 
     simple_vals = [simple_l_likelihood_func(l) for l in ls]
