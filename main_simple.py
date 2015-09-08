@@ -81,11 +81,19 @@ if __name__ == '__main__':
 
     combined_vals = [combined_neg_func(l) for l in ls]
 
-    plt.plot(ls, s_vals)
+    plt.plot(ls, s_vals, label='Speaker')
 
-    plt.plot(ls, l_vals)
+    plt.plot(ls, l_vals, label='Listener')
 
-    plt.plot(ls, combined_vals)
+    # plt.plot(ls, combined_vals)
+
+    plt.ylabel('$P(Data|\lambda)$')
+
+    plt.xlabel('$\lambda$')
+
+    plt.title('MLE of Lambda in the simple condition\n $U_S = -D_{KL}$')
+
+    plt.legend()
 
     plt.show()
 
@@ -121,11 +129,19 @@ if __name__ == '__main__':
 
     combined_vals = [combined_neg_func(l) for l in ls]
 
-    plt.plot(ls, s_vals)
+    plt.plot(ls, s_vals, label='Speaker')
 
-    plt.plot(ls, l_vals)
+    plt.plot(ls, l_vals, label='Listener')
 
-    plt.plot(ls, combined_vals)
+    # plt.plot(ls, combined_vals)
+
+    plt.ylabel('$P(Data|\lambda)$')
+
+    plt.xlabel('$\lambda$')
+
+    plt.title('MLE of Lambda in the simple condition\n $U_S = -D_{JS}$')
+
+    plt.legend()
 
     plt.show()
 
@@ -153,7 +169,7 @@ if __name__ == '__main__':
 
     #### PLOTS ####
 
-    ls = [_ for _ in np.arange(-20, 20, 0.01)]
+    ls = [_ for _ in np.arange(0, 20, 0.01)]
 
     s_vals = [s_likelihood_func(l) for l in ls]
 
@@ -161,11 +177,19 @@ if __name__ == '__main__':
 
     combined_vals = [combined_neg_func(l) for l in ls]
 
-    plt.plot(ls, s_vals)
+    plt.plot(ls, s_vals, label='Speaker')
 
-    plt.plot(ls, l_vals)
+    plt.plot(ls, l_vals, label='Listener')
 
-    plt.plot(ls, combined_vals)
+    # plt.plot(ls, combined_vals)
+
+    plt.ylabel('$P(Data|\lambda)$')
+
+    plt.xlabel('$\lambda$')
+
+    plt.title('MLE of Lambda in the simple condition\n $U_S = -H$')
+
+    plt.legend()
 
     plt.show()
 

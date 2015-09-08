@@ -6,7 +6,7 @@ from math import exp
 from math import log
 
 from JSD import jsd_non_iterative
-from Hellinger import hellinger
+from Hellinger import hellinger_non_iterative_probs
 
 from scipy.optimize import minimize
 
@@ -16,7 +16,7 @@ class RSA:
     # Initialises an RSA object using a semantics matrix
     # (indicates which messages correspond to which referent);
     # allows to set model parameters lambda and costs:
-    def __init__(self, correspondence_mat, l=1, c=()):
+    def __init__(self, correspondence_mat, l=1., c=()):
         self.correspondence_mat = correspondence_mat
         self.listener_belief = correspondence_mat
         self.speaker_choice = np.matrix("")
@@ -124,17 +124,17 @@ if __name__ == '__main__':
                             0 1 0]
                             """)
     #
-    # simple_game = np.matrix("""
-    #                        [0 1 0;
-    #                         1 1 0;
-    #                         0 0 1;
-    #                         0 0 1]
-    #                         """)
+    simple_game = np.matrix("""
+                           [0 1 0;
+                            1 1 0;
+                            0 0 1;
+                            0 0 1]
+                            """)
 
-    complex_game = np.transpose(complex_game)
+    # simple_game = np.transpose(simple_game)
 
     # create RSA object
-    rsa1 = RSA(complex_game)
+    rsa1 = RSA(simple_game)
 
     # get the dummy listener's belief
     l_belief = rsa1.r0()
@@ -172,9 +172,9 @@ if __name__ == '__main__':
 
     # get the speaker's choice probabilities
     # (using the Hellinger divergence as the utility function)
-    s_choice = rsa1.s1(hellinger)
+    s_choice = rsa1.s1(hellinger_non_iterative_probs)
 
-    print('S_CHOICE:\n', rsa1.speaker_choice, '\nEND')
+    print('S_CHOICE (Hellinger):\n', rsa1.speaker_choice, '\nEND')
 
     l_reason = rsa1.r2([.3, .12, .58])
 

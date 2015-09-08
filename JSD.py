@@ -49,11 +49,26 @@ def point_div(dist_a, dist_b):
 # 1/uniform distribution
 def jsd_non_iterative(num_messages):
 
-    # might be necessary because RSA gives 1/num_messages
-    # does not seem to matter -> normalise(x)==normalise(1/x)
-    #num_messages = 1/num_messages
+    # might have been necessary but
+    # seems to be equivalent to -jsd_non_iterative
+    # -> gives same results for MLE, just negated
+    num_messages = 1/num_messages
 
-    return (log((4*num_messages)/(num_messages+1))-(log(num_messages+1)/num_messages))/2
+    rval = (log((4*num_messages)/(num_messages+1))-(log(num_messages+1)/num_messages))/2
+
+    # n = num_messages
+    #
+    # # H[L, M]
+    # rval = log((2*n)/(n+1))/n
+    # rval += (1-(1/n))*log(2*n)
+    #
+    # # H[S,M]
+    # rval += log((2*n)/(n+1))
+    #
+    # #H(L)
+    # rval += log(n)
+
+    return -rval
 
 
 if __name__ == '__main__':
@@ -72,7 +87,7 @@ if __name__ == '__main__':
 
     import numpy as np
 
-    vals = list(np.arange(0.1, 0.999, 0.001))
+    vals = list(np.arange(0.001, 1, 0.001))
 
     jsd_vals = [jsd_non_iterative(x) for x in vals]
 
@@ -84,23 +99,38 @@ if __name__ == '__main__':
 
     plt.plot(vals, kld_vals, label='KLD')
 
-    # ratio_vals = [jsd_non_iterative(x)/log(x) for x in vals]
-    #
-    # plt.plot(ratio_vals, label='ratio')
+    from Hellinger import hellinger_non_iterative_probs
 
+    hl_vals = [hellinger_non_iterative_probs(x) for x in vals]
 
-    plt.plot(0.5, jsd_non_iterative(0.5), 'o')
-
-    plt.plot(0.5, log(0.5), 'o')
-
-    plt.plot(1./3, jsd_non_iterative(1./3), 'o')
-
-    plt.plot(1./3, log(1./3), 'o')
-
-    plt.plot(1., jsd_non_iterative(1.), 'o')
-
-    plt.plot(1., jsd_non_iterative(1.), 'o')
+    plt.plot(vals, hl_vals, label='H')
 
     plt.legend()
 
     plt.show()
+
+    plt.plot(vals, [jsd_non_iterative(x)/log(x) for x in vals], label='RATIO JSD/KLD')
+
+    plt.plot(vals, [hellinger_non_iterative_probs(x)/log(x) for x in vals], label='RATIO H/KLD')
+
+    plt.plot(vals, [jsd_non_iterative(x)/hellinger_non_iterative_probs(x) for x in vals], label='RATIO JSD/H')
+
+    plt.legend()
+
+    plt.show()
+
+
+
+    # v1 = [_ for _ in range(2, 30)]
+    #
+    # jsd_vals = [jsd_non_iterative(x) for x in v1]
+    #
+    # plt.plot(v1, jsd_vals)
+    #
+    # v2 = [1./x for x in v1]
+    #
+    # kld_vals = [log(x) for x in v2]
+
+    # plt.plot(v2, kld_vals)
+    #
+    # plt.show()
