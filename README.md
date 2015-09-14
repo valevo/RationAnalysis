@@ -19,3 +19,4 @@ Rational Analysis Project
 
 * numpy
 * matplotlib
+*scipy
