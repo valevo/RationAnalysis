@@ -1,16 +1,7 @@
 __author__ = 'Valentin'
 
-import numpy as np
-
 import matplotlib.pyplot as plt
-
-
-from RSA import *
-
 from Fit_Model import *
-
-
-
 from JSD import jsd_non_iterative
 from Hellinger import hellinger_non_iterative_probs
 
@@ -28,7 +19,6 @@ def get_complex_likelihood_funcs(utility_func):
 
     ################### PRODUCTION #####################
 
-    # trigger referent is second row, target message is first in row
     trigger_prod = (0, 0)
 
     complex_prod_trials = 163
@@ -37,7 +27,6 @@ def get_complex_likelihood_funcs(utility_func):
 
     ################### COMPREHENSION #####################
 
-    # see trigger_prod
     trigger_comp = trigger_prod
 
     complex_comp_trials = 168

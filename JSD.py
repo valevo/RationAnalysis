@@ -1,9 +1,5 @@
 __author__ = 'Valentin'
 
-from math import e
-
-from matplotlib import pyplot as plt
-
 from math import log
 
 
@@ -44,18 +40,17 @@ def point_div(dist_a, dist_b):
                 yield dist_a[i]*log(dist_a[i]/dist_b[i])
 
 
-# num_messages = the number of messages true of a referent
-# -> sum(row of correspondence matrix) or
-# 1/uniform distribution
-def jsd_non_iterative(num_messages):
-
-    # might have been necessary but
-    # seems to be equivalent to -jsd_non_iterative
-    # -> gives same results for MLE, just negated
-    num_messages = 1/num_messages
+# derived version of the JSD using the knowledge about
+# R_0 and S_1
+def jsd_non_iterative(speaker_prob):
+    num_messages = 1/speaker_prob
 
     rval = (log((4*num_messages)/(num_messages+1))-(log(num_messages+1)/num_messages))/2
 
+    rval *= -1
+
+
+    ## entropy-based representation of JSD
     # n = num_messages
     #
     # # H[L, M]
@@ -68,20 +63,12 @@ def jsd_non_iterative(num_messages):
     # #H(L)
     # rval += log(n)
 
-    return -rval
+    return rval
 
 
 if __name__ == '__main__':
 
-    # plot where x is the number of messages, and the plotted functions are JSD(x)
-    # and log(x) (i.e. KLD), dots on the lines are functions values of common x in the
-    # RSA (1, 0.5, 1/3 (-> from the uniform distribution))
-    # this is to show the asymptotic behaviour of the two functions
-    # and the fact that they are just monotonic transformations of each other
-    # and that they are both concave functions and monotonically
-    # increasing functions (all of that holds only for 0 < x < 1)
-
-
+    # first plot used in the paper
 
     import matplotlib.pyplot as plt
 

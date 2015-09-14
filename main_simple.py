@@ -1,15 +1,8 @@
 __author__ = 'Valentin'
 
-import numpy as np
-
 import matplotlib.pyplot as plt
 
-
-from RSA import *
-
 from Fit_Model import *
-
-# from Utils import *
 
 from JSD import jsd_non_iterative
 from Hellinger import hellinger_non_iterative_probs
@@ -219,8 +212,6 @@ if __name__ == '__main__':
     plt.plot(ls, s_vals, label='Speaker')
 
     plt.plot(ls, l_vals, label='Listener')
-
-    # plt.plot(ls, combined_vals)
 
     plt.ylabel('$P(Data|\lambda)$')
 

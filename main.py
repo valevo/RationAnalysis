@@ -1,27 +1,16 @@
 __author__ = 'zweiss'
 
-import numpy as np
-
 import matplotlib.pyplot as plt
-
-
-from RSA import *
-
 from Fit_Model import *
-
-
-
 from JSD import jsd_non_iterative
 from Hellinger import hellinger_non_iterative_probs
-
 from main_complex import get_complex_likelihood_funcs
-
 from main_simple import get_simple_likelihood_funcs
 
 
 if __name__ == '__main__':
 
-    ls = [_ for _ in np.arange(0, 20, 0.01)]
+    ls = [_ for _ in np.arange(0, 10, 0.01)]
 
     ###################### KLD ###########################
 
@@ -75,6 +64,8 @@ if __name__ == '__main__':
     complex_vals = [complex_l_likelihood_func(l) for l in ls]
 
     combined_vals = [combined_func(l) for l in ls]
+
+    combined_kld = combined_vals
 
     plt.plot(ls, simple_vals, label='Simple')
 
@@ -145,6 +136,8 @@ if __name__ == '__main__':
     complex_vals = [complex_l_likelihood_func(l) for l in ls]
 
     combined_vals = [combined_func(l) for l in ls]
+
+    combined_jsd = combined_vals
 
     plt.plot(ls, simple_vals, label='Simple')
 
@@ -217,6 +210,8 @@ if __name__ == '__main__':
 
     combined_vals = [combined_func(l) for l in ls]
 
+    combined_hell = combined_vals
+
     plt.plot(ls, simple_vals, label='Simple')
 
     plt.plot(ls, complex_vals, label='Complex')
@@ -232,3 +227,21 @@ if __name__ == '__main__':
     plt.legend()
 
     plt.show()
+
+    plt.plot(ls, combined_kld, label='KLD')
+
+    plt.plot(ls, combined_jsd, label='JSD')
+
+    plt.plot(ls, combined_hell, label='HELLINGER')
+
+    plt.title('Listener Likelihood Functions\n for the combined condition $U_S$')
+
+    plt.xlabel('$\lambda$')
+
+    plt.ylabel('$P(Data|\lambda)$')
+
+    plt.legend()
+
+    plt.show()
+
+

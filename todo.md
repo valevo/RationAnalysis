@@ -15,7 +15,7 @@ A. Theoretische Grundlagen
 B. Implementierung in Python
 ********************************
 
-* Rational Speech Act Model implementieren (by Vale and Zarah)
+* Rational Speech Act Model implementieren (by Vale)
 
 * Jensen-Shannon-Distance implementieren (by Vale)
 
@@ -26,7 +26,7 @@ B. Implementierung in Python
 C. Experiment
 ****************
 
-* Rational Speech Act Model auf Daten anwenden als Baseline (by Vale and Zarah)
+* Rational Speech Act Model auf Daten anwenden (by Vale)
 
 * Jensen-Shannon-Distance auf Daten anwenden (by Vale)
 
